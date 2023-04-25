@@ -20,7 +20,7 @@ function CollapsibleExample() {
         <button class="btn btn-success my-2 my-sm-0" type="submit">Login </button>
         </Link>
         <Link to="/login">
-        <button class="btn btn-success my-2 my-sm-0" type="submit">Register</button>
+        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Register</button>
         </Link>
       </Container>
     </Navbar>

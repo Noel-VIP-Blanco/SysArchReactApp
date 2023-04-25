@@ -4,9 +4,9 @@ function RightColumn(){
     return(
         <center>
             <Image src={Dota} rounded style={{
-                            width: 500,
-                            height: 500
-                    }}/>
+                width: 500,
+                height: 500
+            }}/>
         </center>
     )
 }
