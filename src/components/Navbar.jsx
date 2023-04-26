@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from "react";
 import { Link } from 'react-router-dom';
 function CollapsibleExample() {
@@ -16,10 +15,10 @@ function CollapsibleExample() {
             <Nav.Link href="/pricing">Pricing</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Link to="/register">
+        <Link to="/Login">
         <button class="btn btn-success my-2 my-sm-0" type="submit">Login </button>
         </Link>
-        <Link to="/login">
+        <Link to="/Register">
         <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Register</button>
         </Link>
       </Container>
