@@ -3,14 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import components
 import RightColumn from '../components/RightColumn';
 import LeftColumn from '../components/LeftColumn';
+import WelcomeUser from '../components/WelcomeUser';
+
 export const Home = () => {
-    const existingUsers = JSON.parse(localStorage.getItem('users'))
-    console.log(existingUsers);
+    
     return(
         <>
-        <center><h1>Hello {existingUsers[0].firstName}</h1></center>
+        <WelcomeUser/>
            <div class="container">
-           
                 <div class="row" >
                     <div class="col-md"  style={{
                             backgroundColor: 'black',

@@ -1,4 +1,4 @@
-import React, {useState}  from 'react';
+import React, {useState , useEffect}  from 'react';
 import {
   MDBBtn,
   MDBContainer,
@@ -25,9 +25,11 @@ const RegisterForm = () => {
     } else if (name === 'password') {
       setPassword(value);
     }
-
-    setButtonDisabled(!(firstName && email && password));
   };
+  
+  useEffect(() => {
+    setButtonDisabled(!(firstName && email && password));
+  }, [firstName, email, password]);
 
   const registerUser = () => {
     const user = { firstName, email, password };
