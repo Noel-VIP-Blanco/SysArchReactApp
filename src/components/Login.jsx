@@ -15,11 +15,6 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const elements = [
-	{label: "Your Name", type: "text", value: setFirstName},
-	{label: "Your Email", type: "email", value: setEmail},
-	{label: "Your Password", type: "password", value: setPassword}
-  ]
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
@@ -43,14 +38,9 @@ const RegisterForm = () => {
     localStorage.setItem('users', JSON.stringify(newUsers));
     window.location.href = '/';
   };
-  const [test, setTest] = useState('');
-  const getValue = (event) => {
-	setTest(event.target.value)
-  }
 
   return (
-    <>
-	<MDBContainer
+    <MDBContainer
       fluid
       className="d-flex align-items-center justify-content-center bg-image"
       style={{ backgroundImage: 'url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp)' }}
@@ -59,42 +49,52 @@ const RegisterForm = () => {
       <MDBCard className="m-5" style={{ maxWidth: '600px' }}>
         <MDBCardBody className="px-5">
           <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-          {elements.map(
-			(elem) => {
-				return(
-					<MDBInput
+          <MDBInput
             wrapperClass="mb-4"
-            label={elem.label}
+            label="Your Name"
             size="lg"
             id="form1"
-            type={elem.type}
+            type="text"
             name="firstName"
-            onChange={(e) =>elem.value(e.target.value)}
+            value={firstName}
+            onChange={handleInputChange}
           />
-				)
-			}
-		  )}
-          
+          <MDBInput
+            wrapperClass="mb-4"
+            label="Your Email"
+            size="lg"
+            id="form2"
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleInputChange}
+          />
+          <MDBInput
+            wrapperClass="mb-4"
+            label="Password"
+            size="lg"
+            id="form3"
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleInputChange}
+          />
 
+          {/* <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
+            Register
+          </MDBBtn> */}
+          <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
+            Your name is {firstName}
+          </MDBBtn>
           <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
             Register
           </MDBBtn>
-
-		  <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
-            Hello {firstName}
-          </MDBBtn>
-		  <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
-            Your Email is {email}
-          </MDBBtn>
-		  <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
-            Your password is {password}
+          <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
+            Register
           </MDBBtn>
         </MDBCardBody>
       </MDBCard>
-	  
-	
     </MDBContainer>
-	</>
   );
 };
 
