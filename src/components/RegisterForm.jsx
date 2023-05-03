@@ -8,6 +8,7 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
+import DynamicInput from './DynamicInput';
 
 const RegisterForm = () => {
   const [firstName, setFirstName] = useState('');
@@ -59,7 +60,8 @@ const RegisterForm = () => {
       <MDBCard className="m-5" style={{ maxWidth: '600px' }}>
         <MDBCardBody className="px-5">
           <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-          {elements.map(
+          <DynamicInput elem = {elements}/>
+          {/* {elements.map(
 			(elem) => {
 				return(
 					<MDBInput
@@ -73,7 +75,7 @@ const RegisterForm = () => {
           />
 				)
 			}
-		  )}
+		  )} */}
           
 
           <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg" onClick={registerUser} disabled={buttonDisabled}>
